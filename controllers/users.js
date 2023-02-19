@@ -6,7 +6,7 @@ const dataPath = path.join(__dirname, "..", "data", "users.json");
 const getUsers = (req, res) =>
   getDataFromFile(dataPath)
     .then((users) => res.status(200).send(users))
-    .catch((err) => res.status(400).send(err));
+    .catch((err) => res.status(400).send({ message: "Bad Request" }));
 
 const getProfile = (req, res) =>
   getDataFromFile(dataPath)
@@ -19,6 +19,6 @@ const getProfile = (req, res) =>
       }
       return res.status(200).send(user);
     })
-    .catch((err) => res.status(500).send(err));
+    .catch((err) => res.status(500).send({ message: "Server Error" }));
 
 module.exports = { getUsers, getProfile };

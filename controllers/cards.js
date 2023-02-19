@@ -9,7 +9,7 @@ const getCards = (req, res) => {
       res.status(200).send(cards);
     })
     .catch(() => {
-      res.status(500).send({ message: "Requested resource not found" });
+      res.status(404).send({ message: "Requested resource not found" });
     });
 };
 

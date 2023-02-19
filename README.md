@@ -1,6 +1,8 @@
-# Around the U.S., Project 12
+# Project Name: Around the U.S., Project 12
 
-## Directories
+## Description of Project and Technologies Used
+
+Project displays cards with place around the U.S. utilizing J.S., express server.
 
 `/routes` — routing files.
 
