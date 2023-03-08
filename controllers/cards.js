@@ -3,9 +3,8 @@ const { checkErrors } = require("../utils/errors");
 
 const getCards = (req, res) => {
   Card.find({})
-    .orFail(new Error("Not Found"))
     .then((cards) => {
-      res.status(200).send({ data: cards });
+      res.send({ data: cards });
     })
     .catch((err) => {
       checkErrors({ res, err });
@@ -20,15 +19,7 @@ const createCard = (req, res) => {
       res.status(200).send({ data: card });
     })
     .catch((err) => {
-      if (err.name === "ValidationError") {
-        res.status(400).send({
-          message: `${Object.values(err.errors)
-            .map((error) => error.message)
-            .join(", ")}`,
-        });
-      } else {
-        checkErrors({ res, err });
-      }
+      checkErrors({ res, err });
     });
 };
 

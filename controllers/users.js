@@ -3,9 +3,8 @@ const { checkErrors } = require("../utils/errors");
 
 const getUsers = (req, res) => {
   User.find({})
-    .orFail(new Error("No users found"))
     .then((users) => {
-      res.status(200).send({ data: users });
+      res.send({ data: users });
     })
     .catch((err) => {
       checkErrors({ res, err });
@@ -14,9 +13,9 @@ const getUsers = (req, res) => {
 
 const getProfile = (req, res) => {
   User.findById(req.params.userId)
-    .orFail(new Error("No user found with that id"))
+    .orFail(new Error("Not Found"))
     .then((users) => {
-      res.status(200).send({ data: users });
+      res.send({ data: users });
     })
     .catch((err) => {
       checkErrors({ res, err });
@@ -29,15 +28,7 @@ const createUser = (req, res) => {
   User.create({ name, about, avatar })
     .then((user) => res.status(201).send({ data: user }))
     .catch((err) => {
-      if (err.name === "ValidationError") {
-        res.status(400).send({
-          message: `${Object.values(err.errors)
-            .map((error) => error.message)
-            .join(", ")}`,
-        });
-      } else {
-        checkErrors({ res, err });
-      }
+      checkErrors({ res, err });
     });
 };
 
