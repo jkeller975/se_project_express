@@ -1,7 +1,15 @@
+const BAD_REQUEST = 400;
+const NOT_FOUND = 404;
+const DEFAULT = 500;
+
 module.exports.checkErrors = ({ res, err }) => {
-  if (err.name === "ValidationError" || err.name === "CastError") {
-    res.status(400).send({ message: "Data is invalid" });
+  if (err.message === "Not Found") {
+    res.status(NOT_FOUND).send({ message: "Resource not found" });
+  } else if (err.name === "ValidationError" || err.name === "CastError") {
+    res.status(BAD_REQUEST).send({ message: "Data is invalid" });
   } else {
-    res.status(500).send({ message: "An error has occurred on the server." });
+    res
+      .status(DEFAULT)
+      .send({ message: "An error has occurred on the server." });
   }
 };
