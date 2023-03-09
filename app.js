@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const usersRouter = require("./routes/users");
 const cardsRouter = require("./routes/cards");
+const NOT_FOUND = require("./utils/errors");
 
 const { PORT = 3000 } = process.env;
 
@@ -20,7 +21,10 @@ mongoose.connect("mongodb://localhost:27017/aroundb", {
 app.use(express.json());
 app.use("/users", usersRouter);
 app.use("/cards", cardsRouter);
-
+app.use((req, res, next) => {
+  res.status(NOT_FOUND).send({ message: "Requested resource not found" });
+  next();
+});
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`App listening at port ${PORT}`);
