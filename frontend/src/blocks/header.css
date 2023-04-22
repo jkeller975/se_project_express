@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+
+  margin: 0px 200px 40px 200px;
+  min-height: 120px;
+}
+
+.header__image {
+  margin-top: 45px;
+  margin-bottom: 41px;
+  background-image: url(../images/Header.svg);
+  width: 173px;
+  height: 33px;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header__user {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  margin: 0;
+  padding-right: 24px;
+}
+
+.header__logout {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.header__logout:hover {
+  opacity: 1;
+}
+
+.header__auth-link {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.header__auth-link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    width: 100%;
+  }
+  .header__image {
+    margin: 28px 0 32px 27px;
+    background-size: contain;
+    width: 126px;
+    height: 24px;
+  }
+}

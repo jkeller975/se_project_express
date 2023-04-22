@@ -1,0 +1,35 @@
+.elements {
+  width: 880px;
+  margin: 0 auto;
+}
+
+.elements__list {
+  list-style: none;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  gap: 20px 17px;
+}
+
+@media screen and (max-width: 940px) {
+  .elements {
+    max-width: 100%;
+  }
+  .elements__list {
+    max-width: 940px;
+    grid-template-columns: repeat(2, 282px);
+  }
+}
+
+@media screen and (max-width: 612px) {
+  .elements {
+    max-width: 282px;
+  }
+  .elements__list {
+    max-width: 282px;
+    display: flex;
+    flex-direction: column;
+  }
+}
