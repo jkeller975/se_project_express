@@ -91,7 +91,8 @@ class Api {
 //     ? "api.aroundtheus.mooo.com"
 //     : "http://localhost:3001";
 
-const baseUrl = "http://api.aroundtheus.mooo.com/";
+// const baseUrl = "http://api.aroundtheus.mooo.com/";
+const baseUrl = "http://localhost:3001";
 
 const api = new Api({
   baseUrl: baseUrl,
