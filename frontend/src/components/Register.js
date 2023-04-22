@@ -30,7 +30,7 @@ function Register({ onRegister }) {
               id="email"
               className="auth-form__textfield"
               placeholder="Email"
-              value={email || " "}
+              value={email || ""}
               onChange={handleEmailChange}
               required
             />
@@ -42,7 +42,7 @@ function Register({ onRegister }) {
               id="password"
               className="auth-form__textfield"
               placeholder="Password"
-              value={password || " "}
+              value={password || ""}
               onChange={handlePasswordChange}
               required
             />

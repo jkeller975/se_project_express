@@ -86,13 +86,10 @@ class Api {
   }
 }
 
-// const baseUrl =
-//   process.env.NODE_ENV === "production"
-//     ? "api.aroundtheus.mooo.com"
-//     : "http://localhost:3001";
-
-// const baseUrl = "http://api.aroundtheus.mooo.com/";
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.aroundtheus.mooo.com"
+    : "http://localhost:3001";
 
 const api = new Api({
   baseUrl: baseUrl,
