@@ -1,6 +1,6 @@
 # Project Name: Around the U.S., Project 15
 
-Final project build is location at www.aroundtheus.mooo.com or aroundtheus.mooo.com
+Final project build is location at www.aroundtheus.mooo.com or aroundtheus.mooo.com and API is located at api.aroundtheus.mooo.com
 Signup with a valid email and password
 Login with that email and password
 Update your profile with your name and about you as well as an avatar
